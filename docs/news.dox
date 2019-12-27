@@ -9,6 +9,33 @@
 
 @subsection features_34 New features in version 3.4
 
+@subsubsection standard_cursors_34 More standard cursors
+
+GLFW now provides the standard cursor shapes @ref GLFW_RESIZE_NWSE_CURSOR and
+@ref GLFW_RESIZE_NESW_CURSOR for diagonal resizing, @ref GLFW_RESIZE_ALL_CURSOR
+for omni-directional resizing and @ref GLFW_NOT_ALLOWED_CURSOR for showing an
+action is not allowed.
+
+Unlike the original set, these shapes may not be available everywhere and
+creation will then fail with the new @ref GLFW_CURSOR_UNAVAILABLE error.
+
+The cursors for horizontal and vertical resizing are now referred to as @ref
+GLFW_RESIZE_EW_CURSOR and @ref GLFW_RESIZE_NS_CURSOR, and the pointing hand
+cursor is now referred to as @ref GLFW_POINTING_HAND_CURSOR.  The older names
+are still available.
+
+For more information see @ref cursor_standard.
+
+
+@subsubsection features_34_win32_keymenu Support for keyboard access to Windows window menu
+
+GLFW now provides the
+[GLFW_WIN32_KEYBOARD_MENU](@ref GLFW_WIN32_KEYBOARD_MENU_hint) window hint for
+enabling keyboard access to the window menu via the Alt+Space and
+Alt-and-then-Space shortcuts.  This may be useful for more GUI-oriented
+applications.
+
+
 @subsection caveats_34 Caveats for version 3.4
 
 @subsubsection standalone_34 Tests and examples are disabled when built as a sub-project
@@ -25,6 +52,12 @@ add_subdirectory(path/to/glfw)
 @endcode
 
 
+@subsubsection corevideo_34 CoreVideo dependency has been removed
+
+GLFW no longer depends on the CoreVideo framework on macOS and it no longer
+needs to be specified during compilation or linking.
+
+
 @subsection deprecations_34 Deprecations in version 3.4
 
 @subsection removals_34 Removals in 3.4
@@ -34,6 +67,16 @@ add_subdirectory(path/to/glfw)
 @subsubsection functions_34 New functions in version 3.4
 @subsubsection types_34 New types in version 3.4
 @subsubsection constants_34 New constants in version 3.4
+
+ - @ref GLFW_POINTING_HAND_CURSOR
+ - @ref GLFW_RESIZE_EW_CURSOR
+ - @ref GLFW_RESIZE_NS_CURSOR
+ - @ref GLFW_RESIZE_NWSE_CURSOR
+ - @ref GLFW_RESIZE_NESW_CURSOR
+ - @ref GLFW_RESIZE_ALL_CURSOR
+ - @ref GLFW_NOT_ALLOWED_CURSOR
+ - @ref GLFW_CURSOR_UNAVAILABLE
+ - @ref GLFW_WIN32_KEYBOARD_MENU
 
 
 @section news_archive Release notes for earlier versions
